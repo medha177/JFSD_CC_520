@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .container{
+            display:flex;
+            width:500px;
+            height:40px;
+            flex-wrap: wrap;
+            
+        }
+        div > div{
+            border:2px solid;
+            flex-basis: 150px;
+        }
+        #art1{
+            flex-basis: 100px;
+            flex-grow: 1;
+
+        }
+        #art2{
+            flex-basis:100px;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        #art3{
+            flex-basis:100px ;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>THE DAILY NEWS</h1>
+    <div class="container">
+        <div id="art1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, necessitatibus. Accusamus asperiores, quas odio labore velit numquam voluptates est, tempore eligendi minus ducimus neque sequi architecto debitis eveniet! Ad, vitae!</div>
+        <div id="art2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, natus accusantium. Voluptate hic quisquam quia non vero eligendi quos dolor natus, provident accusantium corporis veritatis est officia molestiae eaque quibusdam!</div>
+        <div id="art3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quae saepe provident optio fugit quisquam, a unde sint incidunt voluptatibus sit doloribus deserunt ipsam eligendi corrupti autem omnis qui tenetur.</div>
+    </div>
+    
+</body>
+</html>
