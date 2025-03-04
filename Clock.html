@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stopwatch</title>
+<style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #display {
+            font-size: 3em;
+            margin-bottom: 40px; /* Increased space between display and buttons */
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 25px;
+            margin: 15px; /* Added space between buttons */
+            border: none;
+            cursor: pointer;
+            border-radius: 20px; /* Slightly oval shape */
+        }
+        #startButton {
+            background-color: green;
+            color: white;
+        }
+        #stopButton {
+            background-color: red;
+            color: white;
+        }
+        #resetButton {
+            background-color: yellow;
+            color: black;
+        }
+</style>
+</head>
+<body>
+ 
+    <h1>Stopwatch</h1>
+<h2 id="display">00:00:00</h2>
+<button id="startButton">Start</button>
+<button id="stopButton">Stop</button>
+<button id="resetButton">Reset</button>
+ 
+    <script>
+        let timer;
+        let startTime;
+        let elapsedTime = 0;
+        let running = false;
+ 
+        function updateDisplay() {
+            let timePassed = running ? Date.now() - startTime + elapsedTime : elapsedTime;
+            let totalSeconds = Math.floor(timePassed / 1000);
+            let seconds = totalSeconds % 60;
+            let minutes = Math.floor(totalSeconds / 60) % 60;
+            let hours = Math.floor(totalSeconds / 3600);
+ 
+            document.getElementById("display").textContent =
+                (hours < 10 ? "0" : "") + hours + ":" +
+                (minutes < 10 ? "0" : "") + minutes + ":" +
+                (seconds < 10 ? "0" : "") + seconds;
+        }
+ 
+        function startTimer() {
+            if (!running) {
+                running = true;
+                startTime = Date.now();
+                alert("Stopwatch Started");
+                timer = setInterval(updateDisplay, 1000); // Update every 1s (no milliseconds)
+            }
+        }
+ 
+        function stopTimer() {
+            if (running) {
+                running = false;
+                elapsedTime += Date.now() - startTime;
+                alert("Stopwatch Stopped");
+                clearInterval(timer);
+            }
+        }
+ 
+        function resetTimer() {
+            clearInterval(timer);
+            running = false;
+            elapsedTime = 0;
+            document.getElementById("display").textContent = "00:00:00";
+        }
+ 
+        document.getElementById("startButton").addEventListener("click", startTimer);
+        document.getElementById("stopButton").addEventListener("click", stopTimer);
+        document.getElementById("resetButton").addEventListener("click", resetTimer);
+</script>
+ 
+</body>
+</html>
