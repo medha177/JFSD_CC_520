@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List with Categories</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("data:image/jpeg;base64,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"); /* Replace with your image URL or file path */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    select, button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 4px;
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .delete-btn {
+      background: #f44336;
+    }
+
+    .delete-btn:hover {
+      background: #d32f2f;
+    }
+
+    .edit-btn {
+      background: #2196f3;
+    }
+
+    .edit-btn:hover {
+      background: #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+    <input type="text" id="task-input" placeholder="Enter a task">
+    <select id="task-category">
+      <option value="todo">To-Do</option>
+      <option value="important">Important Notes</option>
+      <option value="must-do">Must-Do Works</option>
+    </select>
+    <button onclick="addTask()">Add Task</button>
+
+    <h2>To-Do</h2>
+    <ul id="todo-list"></ul>
+
+    <h2>Important Notes</h2>
+    <ul id="important-notes"></ul>
+
+    <h2>Must-Do Works</h2>
+    <ul id="must-do-works"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById("task-input");
+      const taskCategory = document.getElementById("task-category").value;
+      const taskText = taskInput.value.trim();
+
+      if (taskText) {
+        let taskList;
+
+        // Determine the category
+        if (taskCategory === "todo") {
+          taskList = document.getElementById("todo-list");
+        } else if (taskCategory === "important") {
+          taskList = document.getElementById("important-notes");
+        } else if (taskCategory === "must-do") {
+          taskList = document.getElementById("must-do-works");
+        }
+
+        const listItem = document.createElement("li");
+
+        // Create task text
+        const taskSpan = document.createElement("span");
+        taskSpan.textContent = taskText;
+
+        // Create edit button
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.className = "edit-btn";
+        editButton.onclick = function () {
+          const newTask = prompt("Edit your task:", taskSpan.textContent);
+          if (newTask !== null) {
+            taskSpan.textContent = newTask.trim() || taskSpan.textContent;
+          }
+        };
+
+        // Create delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "delete-btn";
+        deleteButton.onclick = function () {
+          taskList.removeChild(listItem);
+        };
+
+        listItem.appendChild(taskSpan);
+        listItem.appendChild(editButton);
+        listItem.appendChild(deleteButton);
+        taskList.appendChild(listItem);
+
+        // Clear input field
+        taskInput.value = "";
+      } else {
+        alert("Please enter a task.");
+      }
+    }
+  </script>
+</body>
+</html>
